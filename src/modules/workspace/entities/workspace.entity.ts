@@ -1,5 +1,6 @@
-import { RoomEntity } from "src/modules/room/entities/room.entity";
-import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { ReservationEntity } from "../../reservation/entities/reservation.entity";
+import { RoomEntity } from "../../room/entities/room.entity";
+import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("Workspace")
 export class WorkspaceEntity {
@@ -17,4 +18,7 @@ export class WorkspaceEntity {
 
     @ManyToOne(() => RoomEntity, (room) => room.workspaces)
     room: RoomEntity;
+
+    @OneToMany(() => ReservationEntity, (reservation) => reservation.workspace)
+    reservations: ReservationEntity[];
 }

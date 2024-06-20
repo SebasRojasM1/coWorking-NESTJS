@@ -1,7 +1,8 @@
+import { ReservationEntity } from '../../reservation/entities/reservation.entity';
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm';
 
 @Entity("User")
-export class User {
+export class UserEntity {
   @PrimaryGeneratedColumn()
   user_id: number;
 
@@ -19,4 +20,7 @@ export class User {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @OneToMany(() => ReservationEntity, (reservation) => reservation.user)
+  reservations: ReservationEntity[];
 }
