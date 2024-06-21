@@ -7,12 +7,12 @@ import { UpdateRoomDto } from '../dto/update-room.dto';
 export class RoomController {
   constructor(private readonly roomService: RoomService) {}
 
-  @Post()
+  @Post("/create")
   create(@Body() createRoomDto: CreateRoomDto) {
     return this.roomService.create(createRoomDto);
   }
 
-  @Get()
+  @Get("/all")
   findAll() {
     return this.roomService.findAll();
   }
@@ -22,12 +22,12 @@ export class RoomController {
     return this.roomService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateRoomDto: UpdateRoomDto) {
+  @Patch('update/:id')
+  update(@Param('id') id: string, @Body() updateRoomDto: CreateRoomDto) {
     return this.roomService.update(+id, updateRoomDto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   remove(@Param('id') id: string) {
     return this.roomService.remove(+id);
   }

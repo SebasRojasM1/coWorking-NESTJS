@@ -1,7 +1,7 @@
 import { WorkspaceEntity } from "src/modules/workspace/entities/workspace.entity";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("Room")
+@Entity("rooms")
 export class RoomEntity {
   @PrimaryGeneratedColumn()
   room_id: number;

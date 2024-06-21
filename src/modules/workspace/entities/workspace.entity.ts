@@ -2,7 +2,7 @@ import { ReservationEntity } from "../../reservation/entities/reservation.entity
 import { RoomEntity } from "../../room/entities/room.entity";
 import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("Workspace")
+@Entity("workspaces")
 export class WorkspaceEntity {
     @PrimaryGeneratedColumn()
     workspace_id: number;
