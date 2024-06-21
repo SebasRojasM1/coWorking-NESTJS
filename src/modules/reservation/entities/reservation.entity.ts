@@ -8,7 +8,7 @@ export class ReservationEntity {
   @PrimaryGeneratedColumn()
   reservation_id: number;
 
-  @Column()
+  @Column({default: "Accepted"})
   status: string;
 
   @CreateDateColumn()

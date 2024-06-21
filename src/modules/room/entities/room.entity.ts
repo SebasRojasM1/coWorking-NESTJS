@@ -6,7 +6,7 @@ export class RoomEntity {
   @PrimaryGeneratedColumn()
   rooms_id: number;
 
-  @Column()
+  @Column({default: ""})
   name_room: string;
 
   @Column()
