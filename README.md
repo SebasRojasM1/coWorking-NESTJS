@@ -40,16 +40,16 @@ To install NestJs, follow these steps:
 1. Open the terminal (It is recommended to use GitBash or your IDE's terminal).
 2. Execute the following command to install NestJs on your device:
 
-    ```sh
-    npm i -g @nestjs/cli
-    ```
+```bash
+  npm i -g @nestjs/cli
+```
 
 ### Repository Installation:
 To clone the repository to your local machine and access the project's files, use the following command:
 
-    ```sh
-    git clone -b main https://github.com/SebasRojasM1/coWorking-NESTJS.git
-    ```
+```bash
+  git clone -b main https://github.com/SebasRojasM1/coWorking-NESTJS.git
+```
 
 This ensures that the repository is available on your device for you to use its information and work on it.
 
@@ -66,28 +66,28 @@ This ensures that the repository is available on your device for you to use its 
 #### Install dependencies
 To use the project, we need to install all the necessary libraries and packages for its proper execution.
 
-    ```sh
-    npm install // npm i
-    ```
+```bash
+  npm install // npm i
+```
 
 ### Running the project
 To run the project, open your console and execute the following command to initialize the project:
 
-    ```sh
-    npm run start:dev
-    ```
+```bash
+  npm run start:dev
+```
 
 ### Environment variables
 We need to assign values to the environment variables for optimal project execution. In this case, the project's environment variables cover the persistence of the connection to our database and part of the token configuration and its expiration time.
 
-    ```sh
-    # PERSISTENCE CONNECTION
-    DB_CONNECTION = mongodb://
-    DB_HOST = localhost:3000
-    DB_NAME = database name
-    DB_USER = user 
-    DB_PASSWORD = DB password
-    ```
+```bash
+  # PERSISTENCE CONNECTION
+  DB_CONNECTION = mongodb://
+  DB_HOST = localhost:3000
+  DB_NAME = database name
+  DB_USER = user 
+  DB_PASSWORD = DB password
+```
 
 ### Postman
 You can execute each of the services already established in the project through the endpoints that have been set up in a Postman collection, from creating, editing, deleting, and other actions.
@@ -100,9 +100,10 @@ _Reminder: To use it, ensure that the project is running correctly._
 ### Swagger
 You can execute each of the services established in the project using Swagger. Simply run the project and access a specific route, where you will find each of them and consume the one you require, displaying each option with its details.
 
-    ```sh
-    http://localhost:3000/api
-    ```
+```bash
+  http://localhost:3000/api-doc
+```
+
 Or click on this shortcut:
 - [Access the project Swagger](http://localhost:3000/api-doc)
 
