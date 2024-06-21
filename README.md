@@ -93,7 +93,7 @@ We need to assign values to the environment variables for optimal project execut
 You can execute each of the services already established in the project through the endpoints that have been set up in a Postman collection, from creating, editing, deleting, and other actions.
 
 Access the Postman collection:
-- [Postman Collection]()
+- [Postman Collection](https://www.postman.com/maintenance-operator-95682430/workspace/nestjs/collection/33425968-10cbaeaa-8210-4922-bcf7-ec602c9fe098?action=share&creator=33425968)
 
 _Reminder: To use it, ensure that the project is running correctly._
 
