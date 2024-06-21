@@ -1,7 +1,7 @@
 import { ReservationEntity } from '../../reservation/entities/reservation.entity';
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm';
 
-@Entity("Session")
+@Entity("sessions")
 export class SessionEntity {
   @PrimaryGeneratedColumn()
   session_id: number;
