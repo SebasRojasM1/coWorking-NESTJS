@@ -81,7 +81,7 @@ To run the project, open your console and execute the following command to initi
 We need to assign values to the environment variables for optimal project execution. In this case, the project's environment variables cover the persistence of the connection to our database and part of the token configuration and its expiration time.
 
 ```bash
-  # PERSISTENCE CONNECTION
+  # PERSISTENCE CONNECTION in VERCELDB
   DB_HOST=""
   DB_PORT=""
   DB_USER=""
