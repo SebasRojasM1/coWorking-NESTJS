@@ -1,26 +1,71 @@
-import { Injectable } from '@nestjs/common';
+import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateReservationDto } from '../dto/create-reservation.dto';
 import { UpdateReservationDto } from '../dto/update-reservation.dto';
+import { ReservationEntity } from '../entities/reservation.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class ReservationService {
-  create(createReservationDto: CreateReservationDto) {
-    return 'This action adds a new reservation';
+  constructor(
+    @InjectRepository(ReservationEntity) private readonly reservationRepository: Repository<ReservationEntity>,
+  ) {}
+
+  async create(createReservationDto: CreateReservationDto): Promise<ReservationEntity> {
+    try {
+      const reservation = this.reservationRepository.create(createReservationDto);
+      return await this.reservationRepository.save(reservation);
+    } catch (error) {
+      throw new ConflictException(`Reservation creation failed: ${error.message}`);
+    }
   }
 
-  findAll() {
-    return `This action returns all reservation`;
+  async findAll(): Promise<ReservationEntity[]> {
+    try {
+      return await this.reservationRepository.find();
+    } catch (error) {
+      throw new Error(`Error fetching reservations: ${error.message}`);
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} reservation`;
+  async findOne(reservation_id: number): Promise<ReservationEntity> {
+    const reservation = await this.reservationRepository.findOne({ where: { reservation_id } });
+
+    if (!reservation) {
+      throw new NotFoundException('Reservation not found. Try again.');
+    }
+
+    return reservation;
   }
 
-  update(id: number, updateReservationDto: UpdateReservationDto) {
-    return `This action updates a #${id} reservation`;
+  async update(reservation_id: number, updateReservationDto: CreateReservationDto): Promise<ReservationEntity> {
+    const reservation = await this.reservationRepository.preload({
+      reservation_id,
+      ...updateReservationDto,
+    });
+
+    if (!reservation) {
+      throw new NotFoundException('Reservation not found. Try again.');
+    }
+
+    try {
+      return await this.reservationRepository.save(reservation);
+    } catch (error) {
+      throw new ConflictException(`Reservation update failed: ${error.message}`);
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} reservation`;
+  async remove(reservation_id: number): Promise<void> {
+    const reservation = await this.reservationRepository.findOne({ where: { reservation_id } });
+
+    if (!reservation) {
+      throw new NotFoundException('Reservation not found. Try again.');
+    }
+
+    try {
+      await this.reservationRepository.remove(reservation);
+    } catch (error) {
+      throw new Error(`Error deleting reservation: ${error.message}`);
+    }
   }
 }
