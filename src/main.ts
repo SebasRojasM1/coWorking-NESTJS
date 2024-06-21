@@ -26,10 +26,10 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-doc', app, document);
 
+  await app.listen(3000);
+
   console.log("Project started => localhost:3000");
   console.log("=========================================================");
   console.log("Access to the project via Swagger: localhost:3000/api-doc");
-
-  await app.listen(3000);
 }
 bootstrap();
