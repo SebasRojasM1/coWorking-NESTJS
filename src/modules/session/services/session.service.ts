@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateSessionDto } from './dto/create-session.dto';
-import { UpdateSessionDto } from './dto/update-session.dto';
+import { CreateSessionDto, UpdateSessionDto} from '../dto';
 
 @Injectable()
 export class SessionService {
