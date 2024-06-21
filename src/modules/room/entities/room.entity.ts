@@ -3,7 +3,7 @@ import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } f
 
 @Entity("Room")
 export class RoomEntity {
-@PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn()
   room_id: number;
 
   @Column()

@@ -37,7 +37,7 @@ import { ReservationService } from './modules/reservation/service/reservation.se
         ssl: true,
       },
     }),
-    TypeOrmModule.forFeature([UserEntity, RoomEntity, SessionEntity, WorkspaceEntity, ReservationEntity]), // Register your entities
+    TypeOrmModule.forFeature([UserEntity, RoomEntity, SessionEntity, WorkspaceEntity, ReservationEntity]),
   ],
   controllers: [UsersController, RoomController, SessionController, WorkspaceController, ReservationController],
   providers: [UsersService, RoomService, SessionService, WorkspaceService, ReservationService],
