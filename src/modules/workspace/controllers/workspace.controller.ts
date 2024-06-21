@@ -7,28 +7,28 @@ import { UpdateWorkspaceDto } from '../dto/update-workspace.dto';
 export class WorkspaceController {
   constructor(private readonly workspaceService: WorkspaceService) {}
 
-  @Post()
+  @Post("create")
   create(@Body() createWorkspaceDto: CreateWorkspaceDto) {
     return this.workspaceService.create(createWorkspaceDto);
   }
 
-  @Get()
+  @Get("all")
   findAll() {
     return this.workspaceService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.workspaceService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateWorkspaceDto: UpdateWorkspaceDto) {
+  @Patch('update/:id')
+  update(@Param('id') id: number, @Body() updateWorkspaceDto: CreateWorkspaceDto) {
     return this.workspaceService.update(+id, updateWorkspaceDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
+  @Delete('delete/:id')
+  remove(@Param('id') id: number) {
     return this.workspaceService.remove(+id);
   }
 }
