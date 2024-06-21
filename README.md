@@ -22,51 +22,95 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# API coWorking
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Project Description
+The API will allow users to reserve workspace in a coworking space for a specific session, facilitating space occupancy management and enhancing the user experience.
 
-## Installation
+### Skills
+- TypeScript
+- NestJs
+- PostgreSQL
 
-```bash
-$ npm install
-```
+## 🛠 Project Set-Up
 
-## Running the app
+### Installing NestJs:
+To install NestJs, follow these steps:
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
+1. Open the terminal (It is recommended to use GitBash or your IDE's terminal).
+2. Execute the following command to install NestJs on your device:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+  npm i -g @nestjs/cli
 ```
+
+### Repository Installation:
+To clone the repository to your local machine and access the project's files, use the following command:
+
+```bash
+  git clone -b main https://github.com/SebasRojasM1/coWorking-NESTJS.git
+```
+
+This ensures that the repository is available on your device for you to use its information and work on it.
+
+#### Dependencies used:
+- `@nestjs/mapped-types`: Facilitates the creation of mapped types in NestJS.
+- `@nestjs/swagger`: Provides integration with Swagger to generate automatic API documentation.
+- `class-validator`: Adds validations to TypeScript classes.
+- `class-transformer`: Allows safe and efficient object transformation.
+- `typeorm`: ORM for TypeScript and JavaScript.
+- `@nestjs/typeorm`: TypeORM module for NestJS.
+- `@nestjs/config`: Configuration module for NestJS.
+- `pg`: Package for interacting with PostgreSQL databases.
+
+#### Install dependencies
+To use the project, we need to install all the necessary libraries and packages for its proper execution.
+
+```bash
+  npm install // npm i
+```
+
+### Running the project
+To run the project, open your console and execute the following command to initialize the project:
+
+```bash
+  npm run start:dev
+```
+
+### Environment variables
+We need to assign values to the environment variables for optimal project execution. In this case, the project's environment variables cover the persistence of the connection to our database and part of the token configuration and its expiration time.
+
+```bash
+  # PERSISTENCE CONNECTION in VERCELDB
+  DB_HOST=""
+  DB_PORT=""
+  DB_USER=""
+  DB_PASS=""
+  DB_NAME=""
+```
+
+### Postman
+You can execute each of the services already established in the project through the endpoints that have been set up in a Postman collection, from creating, editing, deleting, and other actions.
+
+Access the Postman collection:
+- [Postman Collection](https://www.postman.com/maintenance-operator-95682430/workspace/nestjs/collection/33425968-10cbaeaa-8210-4922-bcf7-ec602c9fe098?action=share&creator=33425968)
+
+_Reminder: To use it, ensure that the project is running correctly._
+
+### Swagger
+You can execute each of the services established in the project using Swagger. Simply run the project and access a specific route, where you will find each of them and consume the one you require, displaying each option with its details.
+
+```bash
+  http://localhost:3000/api-doc
+```
+
+Or click on this shortcut:
+- [Access the project Swagger](http://localhost:3000/api-doc)
+
 
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
