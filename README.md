@@ -82,11 +82,11 @@ We need to assign values to the environment variables for optimal project execut
 
 ```bash
   # PERSISTENCE CONNECTION
-  DB_CONNECTION = mongodb://
-  DB_HOST = localhost:3000
-  DB_NAME = database name
-  DB_USER = user 
-  DB_PASSWORD = DB password
+  DB_HOST=""
+  DB_PORT=""
+  DB_USER=""
+  DB_PASS=""
+  DB_NAME=""
 ```
 
 ### Postman
