@@ -3,7 +3,7 @@ import { WorkspaceEntity } from '../../workspace/entities/workspace.entity';
 import { SessionEntity } from '../../session/entities/session.entity';
 import { UserEntity } from '../../users/entities/user.entity';
 
-@Entity("Reservation")
+@Entity("reservations")
 export class ReservationEntity {
   @PrimaryGeneratedColumn()
   reservation_id: number;

@@ -27,8 +27,8 @@ export class RoomService {
     }
   }
 
-  async findOne( room_id: number): Promise<RoomEntity> {
-    const room = await this.roomRepository.findOne({ where: { room_id } });
+  async findOne( rooms_id: number): Promise<RoomEntity> {
+    const room = await this.roomRepository.findOne({ where: { rooms_id } });
 
     if (!room) {
       throw new NotFoundException('Room not found. Try again.');
@@ -39,7 +39,7 @@ export class RoomService {
 
   async update(id: number, updateRoomDto: CreateRoomDto): Promise<RoomEntity> {
     const room = await this.roomRepository.preload({
-      room_id: id,
+      rooms_id: id,
       ...updateRoomDto,
     })
 
@@ -51,8 +51,8 @@ export class RoomService {
   }
 
 
-  async remove(room_id: number): Promise<void> {
-    const room = await this.roomRepository.findOne({ where: { room_id } });
+  async remove(rooms_id: number): Promise<void> {
+    const room = await this.roomRepository.findOne({ where: { rooms_id } });
 
     if (!room) {
       throw new NotFoundException('Room not found. Try again.');
