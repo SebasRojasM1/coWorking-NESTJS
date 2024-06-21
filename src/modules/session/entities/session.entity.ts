@@ -6,7 +6,7 @@ export class SessionEntity {
   @PrimaryGeneratedColumn()
   session_id: number;
 
-  @Column()
+  @Column({default: ""})
   session_name: string;
 
   @Column()

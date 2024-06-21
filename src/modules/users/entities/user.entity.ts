@@ -6,16 +6,16 @@ export class UserEntity {
   @PrimaryGeneratedColumn()
   user_id: number;
 
-  @Column()
+  @Column({default: ""})
   name: string;
 
-  @Column()
+  @Column({default: ""})
   lastname: string;
 
-  @Column()
+  @Column({default: ""})
   email: string;
 
-  @Column()
+  @Column({default: ""})
   password: string;
 
   @CreateDateColumn()

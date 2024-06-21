@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ReservationService } from '../service/reservation.service';
 import { CreateReservationDto, UpdateReservationDto } from '../dto';
@@ -51,5 +52,37 @@ export class ReservationController {
   @ApiResponse({status: 500, description: 'An internal server error occurred while deleting the reservation.'})
   remove(@Param('id') id: string) {
     return this.reservationService.remove(+id);
+  }
+
+
+  /* 6 */
+  @Get('available-workspaces/room/:roomId/session/:sessionId')
+  async findAvailableWorkspaces(@Param('roomId') roomId: number, @Param('sessionId') sessionId: number) {
+    return this.reservationService.findAvailableWorkspaces(roomId, sessionId);
+  }
+
+  @Get('occupied-workspaces/room/:roomId/session/:sessionId')
+  async findOccupiedWorkspaces(@Param('roomId') roomId: number, @Param('sessionId') sessionId: number) {
+    return this.reservationService.findOccupiedWorkspaces(roomId, sessionId);
+  }
+
+  @Get('workspaces/user/:userId')
+  async findWorkspacesByUser(@Param('userId') userId: number) {
+    return this.reservationService.findWorkspacesByUser(userId);
+  }
+
+  @Get('workspaces/session/:sessionId')
+  async findWorkspacesBySession(@Param('sessionId') sessionId: number) {
+    return this.reservationService.findWorkspacesBySession(sessionId);
+  }
+
+  @Get('sessions/most-occupied')
+  async findMostOccupiedSessions() {
+    return this.reservationService.findSessionsOrderedByReservations('desc');
+  }
+
+  @Get('sessions/most-available')
+  async findMostAvailableSessions() {
+    return this.reservationService.findSessionsOrderedByReservations('asc');
   }
 }
