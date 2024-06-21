@@ -1,7 +1,7 @@
 import { ReservationEntity } from '../../reservation/entities/reservation.entity';
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm';
 
-@Entity("User")
+@Entity("users")
 export class UserEntity {
   @PrimaryGeneratedColumn()
   user_id: number;
@@ -12,7 +12,7 @@ export class UserEntity {
   @Column()
   lastname: string;
 
-  @Column({ unique: true })
+  @Column()
   email: string;
 
   @Column()
